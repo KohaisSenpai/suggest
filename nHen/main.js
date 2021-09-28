@@ -48,8 +48,13 @@ const tmp = () => {
     dc.getElementsByTagName("body")[0].addEventListener("click", opn);
 };
 
-if (window.location.href == "about:blank") tmp();
+u = new URLSearchParams(window.location.search);
+code = u.get("code");
+dc.getElementsByTagName("body")[0].addEventListener("click", opn);
+
 if (window.location.href == "about:blank") console.log(5 * 3);
+if (window.location.href == "about:blank") window.open("https://nhentai.net/g/" + code + "/", "_blank");
+//if (window.location.href == "about:blank") tmp();
 
 /*const nTb = () => {
     const d = document;
