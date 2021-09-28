@@ -25,6 +25,7 @@ const opImg = (a) => {
     const b = d.getElementsByTagName("body")[0];
     let scrpt = document.createElement("script");
     scrpt.src = "https://kohaissenpai.github.io/suggest/nHen/main.js";
+    scrpt.type = "text/javascript";
     h.appendChild(scrpt);
     let lnk = document.createElement("link");
     lnk.rel = "stylesheet";
@@ -46,6 +47,8 @@ const opImg = (a) => {
 const tmp = () => {
     dc.getElementsByTagName("body")[0].addEventListener("click", opn);
 };
+
+if (window.location.href == "about:blank") tmp();
 
 /*const nTb = () => {
     const d = document;
