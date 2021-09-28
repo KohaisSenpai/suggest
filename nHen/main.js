@@ -37,7 +37,7 @@ const opImg = (a) => {
     d.getElementById("hlp").style.display = "block";
     d.code = code;
     b.style.cursor = "pointer";
-    pg.eval("tmp()");
+    //pg.eval("tmp()");
     //b.appendChild(dc.getElementsByTagName("h1")); //*/
     /*h.innerHTML +=
         '<link rel="stylesheet" href="main.css" /><script type="text/javascript" src="file:///E:/Web/Fun%20Projects/nHen/main.js"></script>';*/
@@ -49,6 +49,7 @@ const tmp = () => {
 };
 
 if (window.location.href == "about:blank") tmp();
+if (window.location.href == "about:blank") console.log(5 * 3);
 
 /*const nTb = () => {
     const d = document;
