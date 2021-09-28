@@ -19,7 +19,7 @@ const magic = async (d) => {
 };
 
 const opImg = (a) => {
-    pg = window.open("", "_blank");
+    pg = window.open("about:blank?code=" + code, "_blank");
     const d = pg.document;
     const h = d.getElementsByTagName("head")[0];
     const b = d.getElementsByTagName("body")[0];
@@ -95,19 +95,21 @@ const opn = () => {
     window.open("https://nhentai.net/g/" + code + "/", "_blank");
 };
 
-const tmp = () => {
+/*const tmp = () => {
     dc.getElementsByTagName("body")[0].addEventListener("click", () => {
         window.open("https://nhentai.net/g/" + code + "/", "_blank");
     });
-};
+};*/
 
 u = new URLSearchParams(window.location.search);
 code = u.get("code");
 //dc.getElementsByTagName("body")[0].addEventListener("click", opn);
-
+dc.getElementsByTagName("body")[0].addEventListener("click", () => {
+    window.open("https://nhentai.net/g/" + code + "/", "_blank");
+});
 if (window.location.href == "about:blank") console.log(5 * 3);
 //if (window.location.href == "about:blank") window.open("https://nhentai.net/g/" + code + "/", "_blank");
-if (window.location.href == "about:blank") tmp();
+//if (window.location.href == "about:blank") tmp();
 
 const gebi = (a) => {
     return dc.getElementById(a);
