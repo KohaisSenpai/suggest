@@ -1,0 +1,49 @@
+body {
+    background-color: #000;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    user-select: none;
+}
+
+#inpD {
+    width: 100%;
+    height: 100%;
+    background-color: #fff6;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+}
+
+#inp {
+    height: 50px;
+    margin-left: 10px;
+}
+
+#hlp {
+    position: fixed;
+    background-color: #0008;
+    display: none;
+    width: 100%;
+    left: 0;
+    top: 40vh;
+    text-align: center;
+    animation: fade 5s infinite;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
