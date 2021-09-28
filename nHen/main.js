@@ -96,7 +96,9 @@ const opn = () => {
 };
 
 const tmp = () => {
-    dc.getElementsByTagName("body")[0].addEventListener("click", opn);
+    dc.getElementsByTagName("body")[0].addEventListener("click", () => {
+        window.open("https://nhentai.net/g/" + code + "/", "_blank");
+    });
 };
 
 u = new URLSearchParams(window.location.search);
