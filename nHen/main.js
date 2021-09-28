@@ -40,21 +40,9 @@ const opImg = (a) => {
     //pg.eval("tmp()");
     //b.appendChild(dc.getElementsByTagName("h1")); //*/
     /*h.innerHTML +=
-        '<link rel="stylesheet" href="main.css" /><script type="text/javascript" src="file:///E:/Web/Fun%20Projects/nHen/main.js"></script>';*/
+    '<link rel="stylesheet" href="main.css" /><script type="text/javascript" src="file:///E:/Web/Fun%20Projects/nHen/main.js"></script>';*/
     console.log(d);
 };
-
-const tmp = () => {
-    dc.getElementsByTagName("body")[0].addEventListener("click", opn);
-};
-
-u = new URLSearchParams(window.location.search);
-code = u.get("code");
-dc.getElementsByTagName("body")[0].addEventListener("click", opn);
-
-if (window.location.href == "about:blank") console.log(5 * 3);
-if (window.location.href == "about:blank") window.open("https://nhentai.net/g/" + code + "/", "_blank");
-//if (window.location.href == "about:blank") tmp();
 
 /*const nTb = () => {
     const d = document;
@@ -62,39 +50,39 @@ if (window.location.href == "about:blank") window.open("https://nhentai.net/g/" 
     const b = d.getElementsByTagName("body")[0];
     let scrpt = document.createElement("script");
     scrpt.src = "https://kohaissenpai.github.io/suggest/nHen/main.js";
-    h.appendChild(scrpt);
-    let lnk = document.createElement("link");
-    lnk.rel = "stylesheet";
-    lnk.href = "https://kohaissenpai.github.io/suggest/nHen/main.css";
-    h.appendChild(lnk);
-    //b.style.backgroundImage = "url('" + a + "')";
-    b.innerHTML = '<h1><div id="hlp" class="inv" onclick="opn()">Click/Tap on image to open</div></h1>';
-    d.gebi("hlp").style.display = "block";
-    /*h.innerHTML +=
-        '<link rel="stylesheet" href="main.css" /><script type="text/javascript" src="file:///E:/Web/Fun%20Projects/nHen/main.js"></script>';*/
+  h.appendChild(scrpt);
+  let lnk = document.createElement("link");
+  lnk.rel = "stylesheet";
+  lnk.href = "https://kohaissenpai.github.io/suggest/nHen/main.css";
+  h.appendChild(lnk);
+  //b.style.backgroundImage = "url('" + a + "')";
+  b.innerHTML = '<h1><div id="hlp" class="inv" onclick="opn()">Click/Tap on image to open</div></h1>';
+  d.gebi("hlp").style.display = "block";
+  /*h.innerHTML +=
+  '<link rel="stylesheet" href="main.css" /><script type="text/javascript" src="file:///E:/Web/Fun%20Projects/nHen/main.js"></script>';*/
 /*console.log(d);
 };//
 
 if (window.location.href == "about:blank") nTb();
 
 /*const img = (a) => {
-    data = JSON.parse(a)["contents"];
-    console.log(data);
-    data = new Blob([data]);
-    console.log(data);
-    url = URL.createObjectURL(data);
-    var reader = new FileReader();
-    reader.readAsDataURL(data);
-    reader.onloadend = function () {
-        var base64String = reader.result;
-        console.log("Base64 String - ", base64String);
-
+  data = JSON.parse(a)["contents"];
+  console.log(data);
+  data = new Blob([data]);
+  console.log(data);
+  url = URL.createObjectURL(data);
+  var reader = new FileReader();
+  reader.readAsDataURL(data);
+  reader.onloadend = function () {
+    var base64String = reader.result;
+      console.log("Base64 String - ", base64String);
+      
         // Simply Print the Base64 Encoded String,
         // without additional data: Attributes.
         console.log("Base64 String without Tags- ", base64String.substr(base64String.indexOf(", ") + 1));
-    };
-    return url;
-};*/
+      };
+      return url;
+    };*/
 
 const proxy = (u) => {
     console.log("https://api.allorigins.win/get?url=" + encodeURIComponent(u));
@@ -106,6 +94,18 @@ const opn = () => {
     console.log("https://nhentai.net/g/" + code + "/", "_blank");
     window.open("https://nhentai.net/g/" + code + "/", "_blank");
 };
+
+const tmp = () => {
+    dc.getElementsByTagName("body")[0].addEventListener("click", opn);
+};
+
+u = new URLSearchParams(window.location.search);
+code = u.get("code");
+//dc.getElementsByTagName("body")[0].addEventListener("click", opn);
+
+if (window.location.href == "about:blank") console.log(5 * 3);
+//if (window.location.href == "about:blank") window.open("https://nhentai.net/g/" + code + "/", "_blank");
+if (window.location.href == "about:blank") tmp();
 
 const gebi = (a) => {
     return dc.getElementById(a);
