@@ -101,9 +101,12 @@ const opn = () => {
     });
 };*/
 
+console.log(window.location.href.includes("about:blank"));
+
 if (window.location.href.includes("about:blank")) {
     u = new URLSearchParams(window.location.search);
     code = u.get("code");
+    console.log(u);
     //dc.getElementsByTagName("body")[0].addEventListener("click", opn);
     dc.getElementsByTagName("body")[0].addEventListener("click", () => {
         window.open("https://nhentai.net/g/" + code + "/", "_blank");
