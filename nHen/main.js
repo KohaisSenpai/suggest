@@ -2,7 +2,7 @@ const dc = document;
 let lock = true;
 
 const magic = async (d) => {
-    gebi("inpD").style.display = "none";
+    //gebi("inpD").style.display = "none";
     let a = new Date(d.value),
         b = gebi("bdy");
     a = code = "" + a.getDate() + a.getMonth() + a.getYear();
@@ -10,12 +10,63 @@ const magic = async (d) => {
     //b.innerHTML = await getUrl("https://cors-anywhere.herokuapp.com/https://nhentai.net/g/" + a + "/");
     console.log("https://nhentai.net/g/" + a + "/");
     //b.style.backgroundImage = "url('" + img(await get(proxy(await getUrl(a)))) + "')";
-    b.style.backgroundImage = "url('" + (await getUrl(a)) + "')";
+    /*b.style.backgroundImage = "url('" + (await getUrl(a)) + "')";
     console.log("url('" + (await getUrl(a)) + "')");
-    lock = false;
+    lock = false;*/
+    opImg(await getUrl(a));
     //console.log(b);
     //console.log(b.style.backgroundImage);
 };
+
+const opImg = (a) => {
+    pg = window.open("", "_blank");
+    const d = pg.document;
+    const h = d.getElementsByTagName("head")[0];
+    const b = d.getElementsByTagName("body")[0];
+    let scrpt = document.createElement("script");
+    scrpt.src = "https://kohaissenpai.github.io/suggest/nHen/main.js";
+    h.appendChild(scrpt);
+    let lnk = document.createElement("link");
+    lnk.rel = "stylesheet";
+    lnk.href = "https://kohaissenpai.github.io/suggest/nHen/main.css";
+    h.appendChild(lnk);
+    b.style.backgroundImage = "url('" + a + "')";
+    b.innerHTML = '<h1><div id="hlp" class="inv" onclick="opn()">Click/Tap on image to open</div></h1>';
+    //d.gebi("hlp").style.display = "block";
+    d.getElementById("hlp").style.display = "block";
+    d.code = code;
+    b.style.cursor = "pointer";
+    pg.eval("tmp()");
+    //b.appendChild(dc.getElementsByTagName("h1")); //*/
+    /*h.innerHTML +=
+        '<link rel="stylesheet" href="main.css" /><script type="text/javascript" src="file:///E:/Web/Fun%20Projects/nHen/main.js"></script>';*/
+    console.log(d);
+};
+
+const tmp = () => {
+    dc.getElementsByTagName("body")[0].addEventListener("click", opn);
+};
+
+/*const nTb = () => {
+    const d = document;
+    const h = d.getElementsByTagName("head")[0];
+    const b = d.getElementsByTagName("body")[0];
+    let scrpt = document.createElement("script");
+    scrpt.src = "https://kohaissenpai.github.io/suggest/nHen/main.js";
+    h.appendChild(scrpt);
+    let lnk = document.createElement("link");
+    lnk.rel = "stylesheet";
+    lnk.href = "https://kohaissenpai.github.io/suggest/nHen/main.css";
+    h.appendChild(lnk);
+    //b.style.backgroundImage = "url('" + a + "')";
+    b.innerHTML = '<h1><div id="hlp" class="inv" onclick="opn()">Click/Tap on image to open</div></h1>';
+    d.gebi("hlp").style.display = "block";
+    /*h.innerHTML +=
+        '<link rel="stylesheet" href="main.css" /><script type="text/javascript" src="file:///E:/Web/Fun%20Projects/nHen/main.js"></script>';*/
+/*console.log(d);
+};//
+
+if (window.location.href == "about:blank") nTb();
 
 /*const img = (a) => {
     data = JSON.parse(a)["contents"];
@@ -66,7 +117,7 @@ const getUrl = async (c) => {
     console.log(cont);
     cont = cont.substring(cont.indexOf("http"), cont.indexOf('" w'));
     if (cont.length == 0) return await lop();
-    gebi("hlp").style.display = "block";
+    //gebi("hlp").style.display = "block";
     console.log(cont);
     return cont;
 };
