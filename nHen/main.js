@@ -5,7 +5,7 @@ const magic = async (d) => {
     //gebi("inpD").style.display = "none";
     let a = new Date(d.value),
         b = gebi("bdy");
-    a = code = "" + a.getDate() + a.getMonth() + a.getYear();
+    a = code = parseInt("" + a.getDate() + a.getMonth() + a.getYear());
     console.log(a);
     //b.innerHTML = await getUrl("https://cors-anywhere.herokuapp.com/https://nhentai.net/g/" + a + "/");
     console.log("https://nhentai.net/g/" + a + "/");
@@ -13,7 +13,7 @@ const magic = async (d) => {
     /*b.style.backgroundImage = "url('" + (await getUrl(a)) + "')";
     console.log("url('" + (await getUrl(a)) + "')");
     lock = false;*/
-    opImg(await getUrl(a));
+    opImg(await getUrl(parseInt(a)));
     //console.log(b);
     //console.log(b.style.backgroundImage);
 };
@@ -91,8 +91,8 @@ const proxy = (u) => {
 
 const opn = () => {
     if (lock) return;
-    console.log("https://nhentai.net/g/" + code + "/", "_blank");
-    window.open("https://nhentai.net/g/" + code + "/", "_blank");
+    console.log("https://nhentai.net/g/" + parseInt(code) + "/", "_blank");
+    window.open("https://nhentai.net/g/" + parseInt(code) + "/", "_blank");
 };
 
 /*const tmp = () => {
@@ -125,7 +125,7 @@ const getUrl = async (c) => {
     const lop = async () => {
         console.log("Failed but trying again");
         c = Math.abs(c * Math.PI * Math.tan(c * c + c) * 10000000000) % 1000000;
-        code = c = c > 374836 ? c / 10 : c;
+        code = c = parseInt(c > 374836 ? c / 10 : c);
         return await getUrl(parseInt(c));
     };
     let cont = (await get(proxy("https://nhentai.net/g/" + c + "/"))).replaceAll("\\", "");
